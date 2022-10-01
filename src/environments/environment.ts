@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_URL: 'https://www.tvmaze.com/api',
+  appId: 'Luj0mR5SJZcKyS4pp2MNioHj8zklIkQo'
 };
 
 /*

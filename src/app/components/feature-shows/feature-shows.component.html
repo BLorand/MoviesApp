@@ -1,0 +1,47 @@
+<div class = "container" *ngIf="current">       
+  <div fxLayout = "row wrap" fxLayoutGap = "10px grid">
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" *ngFor="let show of current"> 
+      <mat-card>
+        <div class ="main-content">
+          <mat-card-header>
+            <mat-card-title class="show-name">{{show.name}}</mat-card-title>
+            <mat-card-subtitle>
+              <mat-icon aria-hidden="false" aria-label="star" color="primary">star</mat-icon> IMDB Show Rating: {{+ show.rating + "/10"}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]='show.image'>
+          <mat-card-content>  
+            <div class="show-details">
+              <span>Runtime: {{show.runtime  + " minutes"}} | <mat-icon aria-hidden="false" aria-label="star" color="primary">star</mat-icon> IMDB Show Rating: {{+ show.rating + "/10"}}</span>
+              <br>
+              <br>
+              <span>Network: {{show.network}} | Language: {{show.language}} | Status: {{show.status}}</span>
+              <p><p><span> Genre:<div *ngFor="let genre of show.genres">{{genre}}</div></span>
+            </div>
+            <br>
+            <br>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <div id="title-summary">Expand Summary</div>
+              </mat-expansion-panel-header>
+              <ng-template matExpansionPanelContent>
+                <div class="summary"><p>{{show.summary}}</p></div>
+              </ng-template>
+            </mat-expansion-panel>
+          </mat-card-content>
+         
+        </div>
+      </mat-card>
+    </div>
+     
+
+    <br>
+    <br>
+
+    <div class="footer">
+      MoviesApp
+    </div>
+    
+  </div>
+</div>
+
